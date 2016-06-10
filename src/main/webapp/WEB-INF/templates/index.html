@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+	<head>
+		<meta charset="UTF-8">
+    	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<title>testPage</title>
+	</head>
+	<body>
+		<p>Hello!</p>
+		<ul th:each="n: ${names}">
+			<li th:text="${n.name}">win7</li>
+		</ul>
+	</body>
+</html>
