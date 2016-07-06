@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8"meta charset="UTF-8"/>
+	<title>Editor</title>
+</head>
+<body>
+	<form action="/article/submit" method="post">
+		<script id="container" name="content" style="width: 600px;height: 300px" type="text/plain"></script>
+	</form>
+	<script type="text/javascript" charset="utf-8" src="../../libs/Ueditor-utf8/ueditor.config.js" th:src="@{/libs/Ueditor-utf8/ueditor.config.js}"></script>
+    <script type="text/javascript" charset="utf-8" src="../../libs/Ueditor-utf8/ueditor.all.min.js" th:src="@{/libs/Ueditor-utf8/ueditor.all.min.js}"> </script>
+    <script type="text/javascript" charset="utf-8" src="../../libs/Ueditor-utf8/lang/zh-cn/zh-cn.js" th:src="@{/libs/Ueditor-utf8/lang/zh-cn/zh-cn.js}"></script>
+	<script type="text/javascript">
+
+		var config = {
+			toolbars: [
+				['bold', 'italic', 'underline', 'strikethrough', '|',
+				  'blockquote', '|',
+				  'paragraph', 'fontsize', '|',
+				  'link', 'simpleupload', '|',
+				  'justifyleft', 'justifycenter', 'justifyright', '|',
+				  'forecolor', 'backcolor', '|',
+				  'insertunorderedlist'
+				]
+			]
+		};
+
+	    var ue = UE.getEditor('container', config);
+
+	</script>
+</body>
+</html>

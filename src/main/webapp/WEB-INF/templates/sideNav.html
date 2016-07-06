@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+	<head>
+		<meta charset="UTF-8">
+    	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<title th:title="#{pageTitle}">sideNav</title>
+		
+		<link rel="stylesheet" type="text/css" href="../../css/bootstrap.min.css" th:href="@{/css/bootstrap.min.css}" />
+		<link rel="stylesheet" type="text/css" href="../../css/sideNav.css" th:href="@{/css/sideNav.css}" />
+	</head>
+	
+
+	<div class="T-sideNavContainer" th:fragment="sideNav">
+		<div class="sideNavContainer">
+			<div class="sideNavLogo">
+				<img src="../../image/cat.png" th:src="@{/image/cat.png}" >
+				<p class="title">OHMYCAT</p>
+			</div>
+			<div class="sideNavLists">
+				<ul>
+					<li>喵动态</li>
+					<li>喵学堂</li>
+					<li>个人中心</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+	<script type="text/javascript" src="../../js/jquery.min.js" th:src="@{/js/jquery.min.js}"></script>
+	<script type="text/javascript" src="../../js/sideNav.js" th:src="@{/js/sideNav.js}"></script>
+
+</html>

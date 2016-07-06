@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" type="text/css" href="../../css/bootstrap.min.css" th:href="@{/css/bootstrap.min.css}">
+    <link rel="stylesheet" type="text/css" href="../../css/app.css" th:href="@{/css/app.css}">
+	<title>login page</title>
+</head>
+<body>
+	<div class="container-fluid login-page">
+		<div class="container">
+			<h1>OHMYCAT</h1>
+			<div class="login-form">
+				<form id="login-form" method="post" action="./">
+					<div class="login-inputs">
+						<div class="errorMsg">
+							用户名或密码错误
+						</div>
+						<div class="input username-input">
+							<input id="username" type="text" name="username" required="required" placeholder="用户名" autofocus="autofocus"></input>
+						</div>
+						<div class="input password-input">
+							<input id="password" type="password" name="password" required="required" placeholder="密码"></input>
+						</div>
+						<div class="input check-auto">
+							<input id="auto-login" type="checkbox" name="auto" checked="checked"></input>
+							<span for="auto-login" class="check-box"><span class="glyphicon glyphicon-ok"></span></span><span class="check-text">下次自动登录</span>
+						</div>
+					</div>
+					<div class="submit-input">
+						<input id="login-submit" type="submit" value="登 录"></input>
+					</div>
+				</form>
+				<div class="change-page">
+					<a href="./register.html">还没有用户？注册 <span class="glyphicon glyphicon-arrow-right"></span></a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript" src="../../js/jquery.min.js" th:src="@{/js/jquery.min.js}"></script>
+	<script type="text/javascript" src="../../js/bootstrap.min.js" th:src="@{/js/bootstrap.min.js}"></script>
+	<script type="text/javascript" src="../../js/jquery.cookie.js" th:src="@{/js/jquery.cookie.js}"></script>
+	<script type="text/javascript" src="../../js/app.js" th:src="@{/js/app.js}"></script>
+</body>
+</html>

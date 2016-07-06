@@ -1,0 +1,47 @@
+html,body {
+	height: 100%;
+	width: 100%;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	font-family: "Microsoft YaHei",Tahoma,Helvetica,Arial;
+}
+
+.T-sideNavContainer {
+	position: relative;
+}
+.sideNavContainer {
+	width: 200px;
+
+	position: fixed;
+	left: 0;
+	top: 0;
+
+	background-color: #111;
+}
+
+.sideNavLogo {
+	width: 200px;
+	height: 100px;
+}
+
+.sideNavLogo img {
+	float: left;
+	width: 50px;
+	height: 50px;
+}
+
+.sideNavLogo .title {
+	font-size: 24px;
+	font-weight: 90;
+
+	color: #fff;
+
+	display: block;
+	line-height: 50px;
+}

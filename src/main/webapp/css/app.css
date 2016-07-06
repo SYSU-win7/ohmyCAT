@@ -1,0 +1,187 @@
+/*************************** GLOBAL ***************************/
+html,body {
+	height: 100%;
+	width: 100%;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	font-family: "Microsoft YaHei",Tahoma,Helvetica,Arial;
+}
+
+
+h1 {
+	font-family: Georgia;
+	font-weight: bold;
+	margin-bottom: 50px;
+}
+
+a {
+	text-decoration: none;
+	color: white;
+}
+
+a:hover {
+	text-decoration: none;
+	color: #C0C0C0;
+}
+
+
+
+/*************************** PREPARE PAGE/ LOGIN PAGE/ REGISTER PAGE **************************************/
+.prepare-page,.login-page,.register-page{
+	height: 100%;
+	background-image: url("../image/background.jpg");
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+	text-align: center;
+	color: white;
+	
+}
+
+.container {
+	margin-top: 80px;
+}
+
+.prepare-page a:hover, .submit-input:hover {
+	background-color: white;
+	color: #C0C0C0;
+}
+
+
+
+/*************************** PREPARE PAGE ***************************/
+
+.prepare-page a {
+	display: block;
+	width: 250px;
+	font-size: 18px;
+	border: 3px solid white;
+	border-radius: 3px;
+	text-align: center;
+	padding: 10px;
+	margin: 20px auto;
+}
+
+
+
+/*************************** LOGIN PAGE/ REGISTER PAGE **************************************/
+
+.login-inputs,.register-inputs {
+	background-color: #F0F0F0;
+	height: 180px;
+	width: 300px;
+	margin: 0 auto;
+	padding: 20px;
+	color: gray;
+	border-radius: 3px;
+}
+
+.input {
+	margin-bottom: 20px; 
+}
+
+.password-input {
+	margin-bottom: 3px;
+}
+
+#username,#password,#password_,#email {
+	width: 250px;
+	padding: 10px;
+	border: 2px solid #C0C0C0;
+}
+
+.submit-input {
+	margin: 0 auto;
+	margin-top: 20px;
+	width: 300px;
+	border: 3px solid white;
+	border-radius: 3px;
+}
+
+#login-submit,#register-submit {
+	width: 100%;
+	font-size: 16px;
+	padding: 10px;
+	border: 0;
+	background-color: transparent;
+}
+
+.change-page {
+	width: 300px;
+	text-align: right;
+	margin: 5px auto;
+}
+
+.errorMsg,.usernameErrorMsg {
+	position: relative;
+	color: red;
+	font-size: 12px;
+	bottom: 2px;
+	visibility: hidden;
+}
+
+.passwordErrorMsg,.emailErrorMsg {
+	position: relative;
+	bottom: 1px;
+	color: red;
+	font-size: 12px;
+	visibility: hidden;
+}
+
+
+
+/*************************** LOGIN PAGE ***************************/
+
+.login-inputs {
+	padding-top: 7px;
+}
+
+.check-auto {
+	position: relative;
+	text-align: left;
+	margin-left: 5px;
+	margin-top: 15px;
+}
+
+#auto-login {
+	display: none;
+}
+
+.check-box {
+	display: inline-block;
+	width: 16px;
+	height: 16px;
+	border: 2px solid #C0C0C0;
+	margin-right: 3px;
+}
+
+.check-auto .glyphicon {
+	font-size: 12px;
+	position: absolute;
+	/*display: none;*/
+}
+
+.check-text {
+	position: absolute;
+	top: -2px;
+}
+
+.check-box:hover {
+	cursor: hand;
+	cursor: pointer;
+}
+
+
+
+/*************************** REGISTER PAGE ***************************/
+
+.register-inputs {
+	height: 275px;
+	padding-top: 3px;
+}
