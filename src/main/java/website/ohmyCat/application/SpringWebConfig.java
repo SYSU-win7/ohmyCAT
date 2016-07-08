@@ -115,6 +115,7 @@ public class SpringWebConfig extends WebMvcConfigurerAdapter implements Applicat
         super.addResourceHandlers(registry);
         registry.addResourceHandler("/css/**").addResourceLocations("/css/");
         registry.addResourceHandler("/js/**").addResourceLocations("/js/");
+        registry.addResourceHandler("/image/**").addResourceLocations("/image/");
     }
 	
 	

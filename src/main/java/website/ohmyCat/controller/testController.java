@@ -28,4 +28,21 @@ public class testController {
 		return "index";
 	}
 	
+	@RequestMapping("/action/followed")
+	public String testPageAgain(Model model) {
+		model.addAttribute("pageTitle", "关注喵");
+		return "action";
+	}
+	
+	@RequestMapping("/action/hotted")
+	public String testPageAgain1(Model model) {
+		model.addAttribute("pageTitle", "热门喵");
+		return "action";
+	}
+	
+	@RequestMapping("/catClass")
+	public String testPageAgain1(Model model) {
+		model.addAttribute("pageTitle", "喵学堂");
+		return "action";
+	}
 }

@@ -11,21 +11,39 @@
 	</head>
 	
 
-	<div class="T-sideNavContainer" th:fragment="sideNav">
-		<div class="sideNavContainer">
-			<div class="sideNavLogo">
-				<img src="../../image/cat.png" th:src="@{/image/cat.png}" >
-				<p class="title">OHMYCAT</p>
+	<body>
+		<div class="L-sideNav" th:fragment="leftDiv">
+			<div class="L-sideNavLogo">
+				<p>
+					OHMYCAT
+				</p>
 			</div>
-			<div class="sideNavLists">
-				<ul>
-					<li>喵动态</li>
-					<li>喵学堂</li>
-					<li>个人中心</li>
+			<div class="L-sideNavList">
+				<ul class="M-option">
+					<li>
+						<a href="#"><img src="../../image/down.png" th:src="@{/image/down.png}" class="listIcon active">喵动态</a>
+						<ul class="S-option">
+							<li><a href="#" th:href="@{/action/followed}">关注喵</a></li>
+							<li><a href="#" th:href="@{/action/hotted}">热门喵</a></li>
+						</ul>
+					</li>
+					<li>
+						<a href="#" th:href="@{/catClass}"><img src="../../image/down.png" th:src="@{/image/down.png}" class="listIcon active">喵学堂</a>
+					</li>
+					<li>
+						<a href="#"><img src="../../image/down.png" th:src="@{/image/down.png}" class="listIcon active">个人中心</a>
+						<ul class="S-option">
+							<li><a href="#" th:href="@{/user}">个人主页</a></li>
+							<li><a href="#" th:href="@{/user/setting}">信息设置</a></li>
+						</ul>
+					</li>
 				</ul>
 			</div>
 		</div>
-	</div>
+		<div class="T-info"  th:fragment="topDiv">
+			<a href="#" th:href="@{/logout}" title="退出登录"></a>
+		</div>
+	</body>
 
 	<script type="text/javascript" src="../../js/jquery.min.js" th:src="@{/js/jquery.min.js}"></script>
 	<script type="text/javascript" src="../../js/sideNav.js" th:src="@{/js/sideNav.js}"></script>
