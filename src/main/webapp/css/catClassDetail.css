@@ -1,0 +1,42 @@
+.article {
+	padding: 20px;
+	border: 1px solid #555;
+}
+
+.article .direst {
+	padding: 10px 0;
+	color: #aaa;
+}
+
+.article .content {
+	padding-bottom: 10px;
+}
+
+.article .info {
+	width: 100%;
+}
+
+.article .info .userIcon {
+	width: 30px;
+	height: 30px;
+	border-radius: 50%;
+	vertical-align: middle;
+}
+
+.article .info p {
+	display: inline-block;
+	line-height: 30px;
+}
+.article .info .Like {
+	float: right;
+	margin-right: 20px;
+}
+
+.article .info .articleLike {
+	float: right;
+	width: 30px;
+	height: 30px;
+	background: url(../image/like.png);
+	background-size: cover;
+	border: none;
+}

@@ -1,0 +1,54 @@
+.line {
+	position: relative;
+	margin-right: 10px;
+	width: 320px;
+	display: inline-block;
+	vertical-align: top;
+}
+
+.article {
+	position: relative;
+	width: 100%;
+	height: auto;
+	border: 1px solid #555;
+	display: inline-block;
+	margin-bottom: 10px;
+}
+
+.article .articleImage {
+	width: 100%;
+}
+
+.article .articleContent {
+	display: block;
+	font-size: 14px;
+	padding: 10px;
+}
+
+.articleInfo {
+	padding: 0px 5px 5px 5px;
+}
+
+.articleInfo .userIcon {
+	width: 30px;
+	height: 30px;
+	border-radius: 50%;
+	vertical-align: middle;
+}
+.articleInfo p {
+	display: inline-block;
+	line-height: 30px;
+}
+
+.articleInfo .articleLike {
+	float: right;
+	width: 30px;
+	height: 30px;
+	background: url(../image/like.png);
+	background-size: cover;
+	border: none;
+}
+
+.articleInfo .Like {
+	float: right;
+}

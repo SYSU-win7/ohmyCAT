@@ -33,7 +33,7 @@
 					<li>
 						<a href="#"><img src="../../image/down.png" th:src="@{/image/down.png}" class="listIcon active">个人中心</a>
 						<ul class="S-option">
-							<li><a href="#" th:href="@{/user}">个人主页</a></li>
+							<li><a href="#" th:href="@{/user/index}">个人主页</a></li>
 							<li><a href="#" th:href="@{/user/setting}">信息设置</a></li>
 						</ul>
 					</li>
@@ -42,6 +42,7 @@
 		</div>
 		<div class="T-info"  th:fragment="topDiv">
 			<a href="#" th:href="@{/logout}" title="退出登录"></a>
+			<input type="text" placeholder="搜索" id="search"/>
 		</div>
 	</body>
 

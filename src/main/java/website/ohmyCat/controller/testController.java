@@ -41,8 +41,19 @@ public class testController {
 	}
 	
 	@RequestMapping("/catClass")
-	public String testPageAgain1(Model model) {
+	public String testPageAgain2(Model model) {
 		model.addAttribute("pageTitle", "喵学堂");
-		return "action";
+		return "catClass";
 	}
+	
+	@RequestMapping("/login")
+	public String testPageAgain3(Model model) {
+		return "userLogin";
+	}
+	
+	@RequestMapping("/register")
+	public String testPageAgain4(Model model) {
+		return "userRegister";
+	}
+	
 }

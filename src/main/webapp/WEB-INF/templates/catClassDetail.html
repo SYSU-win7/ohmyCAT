@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<title th:text="@{pageTitle}">喵学堂</title>
+	<meta charset="UTF-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+	<link rel="stylesheet" type="text/css" href="../../css/sideNav.css" th:href="@{/css/sideNav.css}" />
+	<link rel="stylesheet" type="text/css" href="../../css/catClassDetail.css" th:href="@{/css/catClassDetail.css}" />
+</head>
+<body>
+	<!--这个涉及到反转义的问题，暂时别管-->
+	<div th:replace ="sideNav :: leftDiv"></div>
+	<div th:replace ="sideNav :: topDiv"></div>
+	<div class="main">
+		<div class="article">
+			<h3 class="title" th:text="@{article.title}">
+				文章标题
+			</h3>
+			<p class="direst" th:text="@{article.direst}">
+				文章概要文章概要文章概要文章概要文章概要文章概要文章概要文章概要文章概要文章概要文章概要文章概要文章概要文章概要文章概要文章概要文章概要文章概要文章概要文章概要文章概要文章概要文章概要文章概要文章概要文章概要文章概要文章概要文章概要文章概要文章概要文章概要文章概要文章概要文章概要文章概要
+			</p>
+			<p class="content" th:text="@{article.content}">
+				文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容
+			</p>
+			<div class="info">
+				<img src="../../image/background.jpg" th:src="@{/image/background.jpg}" class="userIcon"/>
+				<p th:text="@{article.userName}">win7</p>
+				<p class="Like" th:text="@{article.likeNumber}">123</p>
+				<button class="articleLike"></button>
+			</div>
+		</div>
+	</div>
+</body>
+<script type="text/javascript" src="../../js/jquery.min.js" th:src="@{/js/jquery.min.js}"></script>
+<script type="text/javascript" src="../../js/sideNav.js" th:src="@{/js/sideNav.js}"></script>
+</html>
