@@ -1,0 +1,14 @@
+.edit {
+	margin: 20px 0;
+}
+.edit label {
+	display: block;
+}
+.edit input, .edit textarea {
+	margin: 20px 0;
+}
+.edit button {
+	padding: 5px;
+	margin: 20px 0;
+	border: 1px solid #000;
+}

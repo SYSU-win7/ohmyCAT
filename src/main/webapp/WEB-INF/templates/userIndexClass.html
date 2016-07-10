@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<title th:text="@{pageTitle}">喵动态</title>
+	<meta charset="UTF-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+	<link rel="stylesheet" type="text/css" href="../../css/sideNav.css" th:href="@{/css/sideNav.css}" />
+	<link rel="stylesheet" type="text/css" href="../../css/catClass.css" th:href="@{/css/catClass.css}"/>
+	<link rel="stylesheet" type="text/css" href="../../css/nav.css" th:href="@{/css/nav.css}" />
+</head>
+<body>
+	<div th:replace ="sideNav :: leftDiv"></div>
+	<div th:replace ="sideNav :: topDiv"></div>
+	<div class="main">
+		<div class="nav">
+			<div class="index nav_no_select"><a href="#" th:href="@{/user/indexAction}">喵动态</a></div>
+			<div class="index nav_select"><a href="#" th:href="@{/user/indexClass}">喵学堂</a></div>
+			<div class="white"></div>
+		</div>
+		<div class="classBody">
+			<div class="article" th:each="article:${articles}">
+				<a href="/catClass/detail" th:href="@{/catClass/article.articleId}" class="title">文章标题</a>
+				<p th:text="@{article.direst}" class="direst">文章概要文章概要文章概要文章概要文章概要文章概要文章概要文章概要文章概要文章概要文章概要文章概要文章概要文章概要文章概要文章概要文章概要文章概要文章概要文章概要文章概要文章概要文章概要文章概要(限制字数)</p>
+				<div class="info">
+					<img src="../../image/background.jpg" th:src="@{article.userImage}" class="userIcon"/>
+					<p th:text="@{article.userName}">win7</p>
+					<p class="Like" th:text="@{article.likeNumber}">123</p>
+					<button class="articleLike"></button>
+				</div>
+			</div>
+			<!--test-->
+			<div class="article">
+				<a href="/catClass/detail" th:href="@{/catClass/article.articleId}" class="title">文章标题</a>
+				<p th:text="@{article.direst}" class="direst">文章概要文章概要文章概要文章概要文章概要文章概要文章概要文章概要文章概要文章概要文章概要文章概要文章概要文章概要文章概要文章概要文章概要文章概要文章概要文章概要文章概要文章概要文章概要文章概要(限制字数)</p>
+				<div class="info">
+					<img src="../../image/background.jpg" th:src="@{/image/background.jpg}" class="userIcon"/>
+					<p th:text="@{article.userName}">win7</p>
+					<p class="Like" th:text="@{article.likeNumber}">123</p>
+					<button class="articleLike"></button>
+				</div>
+			</div>
+			<!--test-->
+			<div class="article">
+				<a href="/catClass/detail" th:href="@{/catClass/article.articleId}" class="title">文章标题</a>
+				<p th:text="@{article.direst}" class="direst">文章概要文章概要文章概要文章概要文章概要文章概要文章概要文章概要文章概要文章概要文章概要文章概要文章概要文章概要文章概要文章概要文章概要文章概要文章概要文章概要文章概要文章概要文章概要文章概要(限制字数)</p>
+				<div class="info">
+					<img src="../../image/background.jpg" th:src="@{/image/background.jpg}" class="userIcon"/>
+					<p th:text="@{article.userName}">win7</p>
+					<p class="Like" th:text="@{article.likeNumber}">123</p>
+					<button class="articleLike"></button>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+</body>
+<script type="text/javascript" src="../../js/jquery.min.js" th:src="@{/js/jquery.min.js}"></script>
+<script type="text/javascript" src="../../js/sideNav.js" th:src="@{/js/sideNav.js}"></script>
+</html>

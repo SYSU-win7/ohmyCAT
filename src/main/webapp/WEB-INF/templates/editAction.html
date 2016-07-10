@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<title th:text="@{pageTitle}">喵关注</title>
+	<meta charset="UTF-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+	<link rel="stylesheet" type="text/css" href="../../css/sideNav.css" th:href="@{/css/sideNav.css}" />
+	<link rel="stylesheet" type="text/css" href="../../css/nav.css" th:href="@{/css/nav.css}" />
+	<link rel="stylesheet" type="text/css" href="../../css/edit.css" th:href="@{/css/edit.css}" />
+</head>
+<body>
+	<div th:replace ="sideNav :: leftDiv"></div>
+	<div th:replace ="sideNav :: topDiv"></div>
+	<div class="main">
+		<div class="nav">
+			<div class="index nav_select"><a href="#" th:href="@{/user/indexAction}">新建动态</a></div>
+			<div class="index nav_no_select"><a href="#" th:href="@{/user/indexClass}">新建学堂</a></div>
+			<div class="white"></div>
+		</div>
+		<form class="edit" action="#" th:action="@{/user/editAction}">
+			<label for="picture">上传图片：</label>
+			<input type="file" name="picture" style="width:400px" onpropertychange="checkImg(this.value)"/>
+			<label for="content">编辑文本：</label>
+			<textarea name="content" maxlength="140" style="width:800px;height:100px;" placehold="输入不超过150字的文本"></textarea>
+			<br/>
+			<button type="submit">新建动态</button>
+		</form>
+	</div>
+	
+</body>
+<script type="text/javascript" src="../../js/jquery.min.js" th:src="@{/js/jquery.min.js}"></script>
+<script type="text/javascript" src="../../js/sideNav.js" th:src="@{/js/sideNav.js}"></script>
+</html>

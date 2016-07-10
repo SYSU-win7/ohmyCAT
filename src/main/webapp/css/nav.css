@@ -1,0 +1,43 @@
+.nav {
+	font-size: 0;
+	margin-bottom: 10px;
+}
+
+.nav .index {
+	display: inline-block;
+	width: 80px;
+	height: 30px;
+	text-align: center;
+}
+
+.nav .index a {
+	text-decoration: none;
+	width: 80px;
+	line-height: 30px;
+	vertical-align: middle;
+	font-size: 16px;
+	color: #000;
+}
+
+.nav .white {
+	width: 830px;
+	height: 30px;
+	display: inline-block;
+	border-bottom: 1px solid #888;
+	vertical-align: bottom;
+}
+
+.nav_select {
+	border-top: 1px solid #888;
+	border-left: 1px solid #888;
+	border-right: 1px solid #888;
+}
+
+.nav_no_select {
+	border-bottom: 1px solid #888;
+}
+
+.actionBody {
+	width: 100%;
+	overflow: hidden;
+}
