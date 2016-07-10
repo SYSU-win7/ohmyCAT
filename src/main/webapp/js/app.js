@@ -15,7 +15,7 @@ $(document).ready(function() {
 				async: false,
 				contentType: "application/json;charset=utf-8",
 				processData: false,
-				data: JSON.stringfy(data),
+				data: JSON.stringfiy(data),
 				dataType: "json",
 				error: function(xhr, textstatus, errorThrown) {
 					alert(xhr.status + '/n' + Thrown + '/n' + errorThrown);
@@ -54,12 +54,12 @@ $(document).ready(function() {
 			} else data.auto = false;
 
 			$.ajax({
-				url: "",
+				url: "./",
 				type: "get",
 				async: false,
 				contentType: "application/json;charset=utf-8",
 				processData: false,
-				data: JSON.stringfy(data),
+				data: JSON.stringify(data),
 				dataType: "json",
 				error: function(xhr, textstatus, errorThrown) {
 					alert(xhr.status + '/n' + Thrown + '/n' + errorThrown);
@@ -83,6 +83,7 @@ $(document).ready(function() {
 			alert("输入不能为空！");
 		}
 		event.preventDefault();
+		return false;
 	});
 
 	// 注册时验证两次输入的密码是否相同
@@ -135,7 +136,7 @@ $(document).ready(function() {
 				async: false,
 				contentType: "application/json;charset=utf-8",
 				processData: false,
-				data: JSON.stringfy(data),
+				data: JSON.stringify(data),
 				dataType: "json",
 				error: function(xhr, textstatus, errorThrown) {
 					alert(xhr.status + '/n' + Thrown + '/n' + errorThrown);
@@ -146,5 +147,6 @@ $(document).ready(function() {
 
 		}
 		event.preventDefault();
+		return false;
 	});
 });
