@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-	<title th:text="@{pageTitle}">喵动态</title>
+	<title>喵主页</title>
 	<meta charset="UTF-8"/>
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
 	<link rel="stylesheet" type="text/css" href="../../css/sideNav.css" th:href="@{/css/sideNav.css}" />
@@ -20,7 +20,7 @@
 		<div class="actionBody">
 			<div class="first line">
 				<div class="article" th:each="first:${articleFirst}">
-					<img src="../../image/background.jpg" th:src="@{first.getFirstImage()}" class="articleImage" />
+					<img src="../../image/background.jpg" th:src="@{first.articleImage}" class="articleImage" />
 					<p th:text="@{first.articleContent}" class="articleContent">
 						喵喵喵~
 					</p>

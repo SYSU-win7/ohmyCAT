@@ -17,7 +17,7 @@
 			<div class="index nav_select"><a href="#" th:href="@{/user/indexClass}">新建学堂</a></div>
 			<div class="white"></div>
 		</div>
-		<form class="edit" action="#" th:action="@{/user/editAction}">
+		<form class="edit" method="post" action="#" th:action="@{/user/editClass}" enctype="multipart/form-data">
 			<label for="title">文章标题：</label>
 			<input type="text" name="title" placehold="不超过25个字" maxlength="25" />
 			<label for="digest">文章概要：</label>

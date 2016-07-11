@@ -9,38 +9,8 @@
 	<link rel="stylesheet" type="text/css" href="../../css/userInfo.css" th:href="@{/css/userInfo.css}" />
 </head>
 <body>
-	<div class="L-sideNav" th:fragment="leftDiv">
-			<div class="L-sideNavLogo">
-				<p>
-					OHMYCAT
-				</p>
-			</div>
-			<div class="L-sideNavList">
-				<ul class="M-option">
-					<li>
-						<a href="#"><img src="../../image/down.png" th:src="@{/image/down.png}" class="listIcon M-active">喵动态</a>
-						<ul class="S-option">
-							<li><a href="#" th:href="@{/action/followed}">关注喵</a></li>
-							<li><a href="#" th:href="@{/action/hotted}">热门喵</a></li>
-						</ul>
-					</li>
-					<li>
-						<a href="#" th:href="@{/catClass}"><img src="../../image/down.png" th:src="@{/image/down.png}" class="listIcon M-active">喵学堂</a>
-					</li>
-					<li>
-						<a href="#"><img src="../../image/down.png" th:src="@{/image/down.png}" class="listIcon M-active">个人中心</a>
-						<ul class="S-option">
-							<li><a href="#" th:href="@{/user/index}">个人主页</a></li>
-							<li><a href="#" th:href="@{/user/setting}">信息设置</a></li>
-						</ul>
-					</li>
-				</ul>
-			</div>
-		</div>
-		<div class="T-info"  th:fragment="topDiv">
-			<a href="#" th:href="@{/logout}" title="退出登录"></a>
-			<input type="text" placeholder="搜索" id="search"/>
-		</div>
+	<div th:replace ="sideNav :: leftDiv"></div>
+	<div th:replace ="sideNav :: topDiv"></div>
 
 	<div class="main">
 
@@ -50,7 +20,7 @@
 				<li role="presentation" id="personal-msg" class="active"><a href="#">个人资料</a></li>
 				<li role="presentation" id="set-password"><a href="#">密码设置</a></li>
 			</ul>
-			<form class="info-form personal-info" method="post" action="./">
+			<form class="info-form personal-info" method="post" action="#">
 				<div class="info-image">
 					<div class="info-title">个人头像：</div>
 					<div class="info-input">
@@ -76,7 +46,7 @@
 					<input id="personal-info-submit" type="submit" value="确认修改资料"></input>
 				</div>
 			</form>
-			<form class="info-form reset-password" method="post" action="./">
+			<form class="info-form reset-password" method="post" action="#">
 				<div class="info-password old-password">
 					<div class="password-title">当前密码</div>
 					<div class="info-input">

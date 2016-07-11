@@ -54,7 +54,7 @@ $(document).ready(function() {
 			} else data.auto = false;
 
 			$.ajax({
-				url: "./",
+				url: "/loginCheck",
 				type: "get",
 				async: false,
 				contentType: "application/json;charset=utf-8",
@@ -131,7 +131,7 @@ $(document).ready(function() {
 		if (username != "" && password != "" && password_ != "" && email != "") {
 
 			$.ajax({
-				url: "",
+				url: "/registerCheck",
 				type: "post",
 				async: false,
 				contentType: "application/json;charset=utf-8",

@@ -53,7 +53,7 @@ $(document).ready(function() {
 		};
 		if (email != "" && submit_flag) {
 			$.ajax({
-				url: "",
+				url: "/user/changeInfo",
 				type: "post",
 				async: false,
 				contentType: "application/json;charset=utf-8",
