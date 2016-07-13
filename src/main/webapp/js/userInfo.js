@@ -18,6 +18,67 @@ $(document).ready(function() {
 	});
 
 	// 点击更改头像并选择一张图片作为头像时，将头像更改为当前选择的图片
+	$.fn.extend({
+	    uploadPreview: function (opts) {
+	        var _self = this,
+	            _this = $(this);
+	        opts = jQuery.extend({
+	            Img: "ImgPr",
+	            Width: 100,
+	            Height: 100,
+	            ImgType: ["gif", "jpeg", "jpg", "bmp", "png"],
+	            Callback: function () {}
+	        }, opts || {});
+	        _self.getObjectURL = function (file) {
+	            var url = null;
+	            if (window.createObjectURL != undefined) {
+	                url = window.createObjectURL(file)
+	            } else if (window.URL != undefined) {
+	                url = window.URL.createObjectURL(file)
+	            } else if (window.webkitURL != undefined) {
+	                url = window.webkitURL.createObjectURL(file)
+	            }
+	            return url
+	        };
+	        _this.change(function () {
+	            if (this.value) {
+	                if (!RegExp("\.(" + opts.ImgType.join("|") + ")$", "i").test(this.value.toLowerCase())) {
+	                    alert("选择文件错误,图片类型必须是" + opts.ImgType.join("，") + "中的一种");
+	                    this.value = "";
+	                    return false
+	                }
+	                if ($.support.msie) {
+	                    try {
+	                        $("#" + opts.Img).attr('src', _self.getObjectURL(this.files[0]))
+	                    } catch (e) {
+	                        var src = "";
+	                        var obj = $("#" + opts.Img);
+	                        var div = obj.parent("div")[0];
+	                        _self.select();
+	                        if (top != self) {
+	                            window.parent.document.body.focus()
+	                        } else {
+	                            _self.blur()
+	                        }
+	                        src = document.selection.createRange().text;
+	                        document.selection.empty();
+	                        obj.hide();
+	                        obj.parent("div").css({
+	                            'filter': 'progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=scale)',
+	                            'width': opts.Width + 'px',
+	                            'height': opts.Height + 'px'
+	                        });
+	                        div.filters.item("DXImageTransform.Microsoft.AlphaImageLoader").src = src
+	                    }
+	                } else {
+	                    $("#" + opts.Img).attr('src', _self.getObjectURL(this.files[0]))
+	                }
+	                opts.Callback();
+	            }
+	        })
+	    }
+	});
+	$("#reset-image").uploadPreview({ Img: "info-image", Width: 140, Height: 140 });
 	/*$("#reset-image").change(function() {
 		if ($("#reset-image").val() != "") {
 			$("#info-image").attr("src", $("#reset-image").val());
@@ -45,28 +106,8 @@ $(document).ready(function() {
 
 	// 提交个人资料修改
 	$("#personal-info-submit").click(function(event) {
-		var email = $("#info-email").val();
-		var assign = $("#info-assign").val();
-		var data = {
-			email: email,
-			assign: assign
-		};
 		if (email != "" && submit_flag) {
-			$.ajax({
-				url: "/user/changeInfo",
-				type: "post",
-				async: false,
-				contentType: "application/json;charset=utf-8",
-				processData: false,
-				data: JSON.stringify(data),
-				dataType: "json",
-				error: function(xhr, textstatus, errorThrown) {
-					alert(xhr.status + '/n' + Thrown + '/n' + errorThrown);
-				},
-				success: function(data) {
-					console.log("success");
-				}
-			});
+			
 		} else if (email == "") {
 			$(".emailError").html("邮箱不能为空");
 			$(".emailError").css("visibility", "visible");
@@ -112,12 +153,9 @@ $(document).ready(function() {
 		if (old_password != "" && new_password != "" && password_ != "") {
 
 			$.ajax({
-				url: "",
+				url: "/user/updatePassword",
 				type: "post",
-				async: false,
-				contentType: "application/json;charset=utf-8",
-				processData: false,
-				data: JSON.stringify(data),
+				data: data,
 				dataType: "json",
 				error: function(xhr, textstatus, errorThrown) {
 					alert(xhr.status + '/n' + Thrown + '/n' + errorThrown);
@@ -125,7 +163,7 @@ $(document).ready(function() {
 					$(".currentPasswordError").css("visibility", "visible");
 				},
 				success: function(data) {
-					console.log("success");
+					alert("密码修改成功");
 					$(".currentPasswordError").css("visibility", "hidden");
 				}
 			});

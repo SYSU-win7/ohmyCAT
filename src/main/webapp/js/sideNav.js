@@ -6,10 +6,10 @@
 			$(this).next().slideToggle();
 			var icon = $(this).find('.listIcon');
 			console.log(icon.attr('class'));
-			if (icon.attr('class').indexOf('active') == -1) {
-				icon.addClass('active');
+			if (icon.attr('class').indexOf('M-active') == -1) {
+				icon.addClass('M-active');
 			} else {
-				icon.removeClass('active');
+				icon.removeClass('M-active');
 			}
 		}
 	});

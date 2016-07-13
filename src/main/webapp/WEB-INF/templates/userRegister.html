@@ -6,14 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <link rel="stylesheet" type="text/css" href="../../css/bootstrap.min.css" th:href="@{/css/bootstrap.min.css}">
     <link rel="stylesheet" type="text/css" href="../../css/app.css" th:href="@{/css/app.css}">
-	<title>register page</title>
+	<title>OhMyCat-注册</title>
 </head>
 <body>
 	<div class="container-fluid register-page">
 		<div class="container">
 			<h1>OHMYCAT</h1>
 			<div class="register-form">
-				<form id="register-form" method="post" action="./">
+				<form id="register-form" method="post" action="#">
 					<div class="register-inputs">
 						<div class="usernameErrorMsg">
 							用户名已存在
@@ -38,11 +38,11 @@
 						</div>
 					</div>
 					<div class="submit-input">
-						<input id="register-submit" type="submit" value="注 册"></input>
+						<input id="register-submit" type="button" value="注 册"></input>
 					</div>
 				</form>
 				<div class="change-page">
-					<a href="./login.html">已经有用户？登录 <span class="glyphicon glyphicon-arrow-right"></span></a>
+					<a href="#" th:href="@{/login}">已经有用户？登录 <span class="glyphicon glyphicon-arrow-right"></span></a>
 				</div>
 			</div>
 		</div>

@@ -12,6 +12,8 @@ import org.springframework.context.support.ResourceBundleMessageSource;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
+import org.springframework.web.multipart.MultipartResolver;
+import org.springframework.web.multipart.commons.CommonsMultipartResolver;
 import org.springframework.web.servlet.HandlerAdapter;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
@@ -48,10 +50,10 @@ public class SpringWebConfig extends WebMvcConfigurerAdapter implements Applicat
             // 执行数据库操作之前要在数据库管理系统上创建一个数据库，名字自己定，
             // 下面语句之前就要先创建ohmyCat数据库
         	DriverManagerDataSource dataSource = new DriverManagerDataSource();
-            dataSource.setDriverClassName("com.mysql.cj.jdbc.Driver");
+            dataSource.setDriverClassName("com.mysql.jdbc.Driver");
             dataSource.setUrl("jdbc:mysql://localhost:3306/ohmycat?characterEncoding=utf-8&serverTimezone=Asia/Shanghai&useSSL=false");
             dataSource.setUsername("root");
-            dataSource.setPassword("root");
+            dataSource.setPassword("131829");
         	this.dataSource = dataSource;
         }
         return this.dataSource;
@@ -109,6 +111,15 @@ public class SpringWebConfig extends WebMvcConfigurerAdapter implements Applicat
     public HandlerAdapter servletHandlerAdapter(){
         return new SimpleServletHandlerAdapter();  
     }
+	
+	@Bean
+	public CommonsMultipartResolver multipartResolver()
+	{
+		CommonsMultipartResolver m = new CommonsMultipartResolver();
+		m.setDefaultEncoding("UTF-8");
+		m.setMaxUploadSize(102400);
+		return m;
+	}
 	
 	@Override
     public void addResourceHandlers(final ResourceHandlerRegistry registry) {

@@ -42,7 +42,7 @@ html,body {
 	transform:rotate(-90deg);
 	-ms-transform:rotate(-90deg); 	/* IE 9 */
 	-moz-transform:rotate(-90deg); 	/* Firefox */
-	-webkit-transform:rotate(-90deg); /* Safari 和 Chrome */
+	-webkit-transform:rotate(-90deg); /* Safari 鍜� Chrome */
 	-o-transform:rotate(-90deg);
 }
 

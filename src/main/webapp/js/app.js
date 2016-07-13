@@ -10,18 +10,19 @@ $(document).ready(function() {
 				password: password
 			};
 			$.ajax({
-				url: "",
-				type: "get",
-				async: false,
-				contentType: "application/json;charset=utf-8",
-				processData: false,
-				data: JSON.stringfiy(data),
+				url: "/ohmycat/login",
+				type: "post",
+				data: data,
 				dataType: "json",
-				error: function(xhr, textstatus, errorThrown) {
-					alert(xhr.status + '/n' + Thrown + '/n' + errorThrown);
+				error: function() {
+					alert("ERROR!");
 				},
 				success: function(data) {
-
+					if (data.Status == "Success") {
+						window.location.reload();
+					} else {
+						alert(data.Status);
+					}
 				}
 			});
 		}
@@ -39,7 +40,7 @@ $(document).ready(function() {
 	});
 
 	// 登录验证用户名和密码
-	$("#login-submit").click(function(event) {
+	$("#login-form").submit(function(event) {
 		var that = this;
 		var username = $(".login-inputs #username").val();
 		var password = $(".login-inputs #password").val();
@@ -49,21 +50,19 @@ $(document).ready(function() {
 				username: username,
 				password: password
 			};
-			if (("#auto-login").attr("checked")) {
+			if ($("#auto-login").attr("checked")) {
 				data.auto = true;
-			} else data.auto = false;
+			} else {
+				data.auto = false;
+			}
 
 			$.ajax({
-				url: "/loginCheck",
-				type: "get",
-				async: false,
-				contentType: "application/json;charset=utf-8",
-				processData: false,
-				data: JSON.stringify(data),
+				url: "/ohmycat/login",
+				type: "post",
+				data: data,
 				dataType: "json",
-				error: function(xhr, textstatus, errorThrown) {
-					alert(xhr.status + '/n' + Thrown + '/n' + errorThrown);
-					$(".login-inputs .errorMsg").css("visibility", "visible");
+				error: function() {
+					alert("ERROR!");
 				},
 				success: function(data) {
 					$(".login-inputs .errorMsg").css("visibility", "hidden");
@@ -76,6 +75,11 @@ $(document).ready(function() {
 						$.cookie("autoLogin",false,{expires:-1});
 						$.cookie("ohmycat-username","",{expires:-1});
 						$.cookie("ohmycat-password","",{expires:-1});
+					}
+					if (data.Status == "Success") {
+						window.location.reload();
+					} else {
+						alert(data.Status);
 					}
 				}
 			});
@@ -131,17 +135,19 @@ $(document).ready(function() {
 		if (username != "" && password != "" && password_ != "" && email != "") {
 
 			$.ajax({
-				url: "/registerCheck",
+				url: "/ohmycat/register",
 				type: "post",
-				async: false,
-				contentType: "application/json;charset=utf-8",
-				processData: false,
-				data: JSON.stringify(data),
+				data: data,
 				dataType: "json",
-				error: function(xhr, textstatus, errorThrown) {
-					alert(xhr.status + '/n' + Thrown + '/n' + errorThrown);
+				error: function() {
+					alert("ERROR!");
 				},
 				success: function(data) {
+					if (data.Status == "Success") {
+						window.location.reload();
+					} else {
+						alert(data.Status);
+					}
 				}
 			});
 

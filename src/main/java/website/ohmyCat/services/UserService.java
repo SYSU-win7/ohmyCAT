@@ -22,4 +22,19 @@ public class UserService {
         return this.userRepository.findAll();
     }
 	
+	public User findUser(String name)
+	{
+		return userRepository.findUser(name);
+	}
+	
+	public void addUser(String name, String password)
+	{
+		userRepository.addUser(name, password);
+	}
+	
+	public User validateUser(String name, String pwd)
+	{
+		return userRepository.validateUser(name, pwd);
+	}
 }
+

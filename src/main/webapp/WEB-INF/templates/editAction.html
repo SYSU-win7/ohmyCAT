@@ -17,7 +17,7 @@
 			<div class="index nav_no_select"><a href="#" th:href="@{/user/indexClass}">新建学堂</a></div>
 			<div class="white"></div>
 		</div>
-		<form class="edit" method="post" action="#" th:action="@{/user/editAction}" enctype="multipart/form-data">
+		<form class="edit" action="#" th:action="@{/user/editAction}">
 			<label for="picture">上传图片：</label>
 			<input type="file" name="picture" style="width:400px" onpropertychange="checkImg(this.value)"/>
 			<label for="content">编辑文本：</label>
@@ -30,5 +30,4 @@
 </body>
 <script type="text/javascript" src="../../js/jquery.min.js" th:src="@{/js/jquery.min.js}"></script>
 <script type="text/javascript" src="../../js/sideNav.js" th:src="@{/js/sideNav.js}"></script>
-<script type="text/javascript" src="../../js/editUpload.js" th:src="@{/js/editUpload.js}"></script>
 </html>

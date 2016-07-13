@@ -12,20 +12,6 @@
 	<div th:replace ="sideNav :: topDiv"></div>
 	<div class="main">
 
-	<!--样式暂时这样子，之后会改的-->
-	<!--这里有三列，返回的时候返回三列，对每个列内的实例进行遍历-->
-	<!--
-		这个页面是给动态的展示页面。
-
-		展示数据：
-		articleImage: 图库中的第一张图片，
-		articleContent：文章的内容
-		userImage：发动态的用户的头像，
-		userName：发动态的用户名，
-		likeNumber：点赞数，
-		articleLike：如果当前浏览的用户点过赞了，这里应该是红色的（直接将返回的参数作为类名，这个暂时还没实现）
-	-->
-
 	<div class="first line">
 			<div class="article" th:each="first:${articleFirst}">
 				<img src="../../image/background.jpg" th:src="@{first.getFirstImage()}" class="articleImage" />
@@ -40,6 +26,7 @@
 
 				</div>
 			</div>
+			<!--test-->
 			<div class="article">
 				<img src="../../image/background.jpg" th:src="@{/image/background.jpg}" class="articleImage" />
 				<p th:text="@{articleContent}" class="articleContent">
@@ -68,6 +55,7 @@
 
 				</div>
 			</div>
+			<!--test-->
 			<div class="article">
 				<img src="../../image/background.jpg" th:src="@{/image/background.jpg}" class="articleImage" />
 				<p th:text="@{articleContent}" class="articleContent">
@@ -96,6 +84,7 @@
 
 				</div>
 			</div>
+			<!--test-->
 			<div class="article">
 				<img src="../../image/background.jpg" th:src="@{/image/background.jpg}" class="articleImage" />
 				<p th:text="@{articleContent}" class="articleContent">

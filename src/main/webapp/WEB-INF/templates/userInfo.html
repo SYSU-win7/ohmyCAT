@@ -20,11 +20,11 @@
 				<li role="presentation" id="personal-msg" class="active"><a href="#">个人资料</a></li>
 				<li role="presentation" id="set-password"><a href="#">密码设置</a></li>
 			</ul>
-			<form class="info-form personal-info" method="post" action="#">
+			<form class="info-form personal-info" enctype="multipart/form-data" method="post" th:action="@{/user/updateInfo}" action="#">
 				<div class="info-image">
 					<div class="info-title">个人头像：</div>
 					<div class="info-input">
-						<img id="info-image" class="img-circle" src="../../image/info-image.jpg" th:src="@{/image/info-image.jpg}">
+						<img id="info-image" class="img-circle" src="../../image/info-image.jpg" th:src="@{'/image/avatar/' + ${avatar}}">
 						<div class="reset-image-button">
 							<input id="reset-image" type="file"></input>更改头像</div>
 					</div>
@@ -32,21 +32,21 @@
 				<div class="info-email">
 					<div class="info-title">个人邮箱：</div>
 					<div class="info-input">
-						<input id="info-email" type="email" value="1234567@qq.com"></input>
+						<input id="info-email" type="email" placeholder="Password" th:placeholder="${email}"></input>
 						<span class="emailError">输入的邮箱格式不正确</span>
 					</div>
 				</div>
 				<div class="info-assign">
 					<div class="info-title">个性签名：</div>
 					<div class="info-input">
-						<textarea id="info-assign" maxlength="80">我想养猫咪！！</textarea>
+						<textarea id="info-assign" maxlength="80" th:text="${signature}">我想养猫咪！！</textarea>
 					</div>
 				</div>
 				<div class="personal-info-submit">
 					<input id="personal-info-submit" type="submit" value="确认修改资料"></input>
 				</div>
 			</form>
-			<form class="info-form reset-password" method="post" action="#">
+			<form class="info-form reset-password" method="post" action="#" th:action="@{/user/updatePassword}">
 				<div class="info-password old-password">
 					<div class="password-title">当前密码</div>
 					<div class="info-input">
